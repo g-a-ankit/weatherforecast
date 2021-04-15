@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { makeStyles } from "@material-ui/core";
+import LocationMetrics from "./Components/LocationMetrics/LocationMetrics";
+import Try from "./Components/Try";
+import Background from "./images/4.png";
 
+const useStyles = makeStyles({
+  root: {
+    top: "0",
+    width: "100%",
+    height: "100%",
+    backgroundSize: "cover",
+    background: `url(${Background})`,
+    backgroundRepeat: " noRepeat",
+  },
+});
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <LocationMetrics />
+      {/* <Try /> */}
     </div>
   );
 }
